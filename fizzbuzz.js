@@ -1,41 +1,48 @@
 for (let i = 1; i <= 15015; i++) {
-    let output = "";
-    let fezz = false;
+    let output = [];
 
     if (i % 3 == 0) {
-        output = "Fizz";
+        output.push("Fizz");
     } 
 
     if (i % 13 == 0) {
         fezz = true;
-        output += "Fezz";
+        output.push("Fezz");
     }
 
     if (i % 5 == 0) {
-        output += "Buzz";
+        output.push("Buzz");
     } 
 
     if (i % 7 == 0) {
-        output += "Bang";
+        output.push("Bang");
     }
 
     if (i % 11 == 0) {
-        output = fezz ? "FezzBong" : "Bong";
+        for (let j = 0; j < output.length; j++) {
+            if (output[j] != "Fezz") {
+                output[j] = "";
+            } 
+        }
+
+        output.push("Bong");
     }
 
-    let n = output.length;
-
+    n = output.length;
+    
     if (n > 0) {
+        let result = "";
         if (i % 17 == 0) {
-            reversed = ""
-            for (let i = n; i > 0; i -= 4) {
-                reversed += output.slice(i - 4, i);
+            for (let k = n-1; k >= 0; k--) {
+                result += output[k];
             }
-
-            console.log(reversed);
         } else {
-            console.log(output);
+            for (let k = 0; k < n; k++) {
+                result += output[k]
+            }
         }
+        
+        console.log(result);
     } else {
         console.log(i);
     }
