@@ -1,4 +1,4 @@
-for (let i = 1; i <= 15015; i++) {
+for (let i = 1; i <= 100; i++) {
     let output = [];
 
     if (i % 3 == 0) {
@@ -38,10 +38,10 @@ for (let i = 1; i <= 15015; i++) {
             }
         } else {
             for (let k = 0; k < n; k++) {
-                result += output[k]
+                result += output[k];
             }
         }
-        
+
         console.log(result);
     } else {
         console.log(i);
